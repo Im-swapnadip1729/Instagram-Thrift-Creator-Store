@@ -3,10 +3,6 @@ To design a robust database for a growing thrift and handmade business, we need 
 
 The following design uses a Product-Variant approach to handle inventory flexibility and a junction table for orders to allow multiple items per purchase.
 
-## Database Schema
-A. Product Catalog
-
-Since thrifted items (unique) and handmade items (batch) share many traits but differ in inventory, we use a single Products table with a type flag and a ProductVariants table to track specifics.
 
 🛠️ Data Dictionary
 -------------------
@@ -70,3 +66,6 @@ The ORDER entity acts as a central hub for status tracking:
 --------------
 
 This design is normalized to **3rd Normal Form (3NF)**. It avoids data redundancy (like repeating customer addresses in every order row) and ensures that if a product is deleted or its price is changed, the historical integrity of past orders remains intact.
+
+# Entity-Relationship Diagram
+![Entity-Relationship Diagram](./diagram-export-5-9-2026-7_35_50-AM.png)
